@@ -1,6 +1,8 @@
 import React from "react"
 import { Tabs } from "expo-router"
 import { MaterialIcons, AntDesign } from "@expo/vector-icons"
+import UserHeader from "@/components/UserHeader"
+import { View } from "react-native"
 
 const tabs = [
   { name: "home", title: "Home", icon: "home" },
@@ -11,7 +13,11 @@ const tabs = [
 // DRY - Don't Repeat Yourself
 const DashboardLayout = () => {
   return (
-    <Tabs
+
+    <View style={{ flex: 1 }}>
+      <UserHeader />
+
+       <Tabs
       screenOptions={{
         headerShown: false
       }}
@@ -29,6 +35,9 @@ const DashboardLayout = () => {
         />
       ))}
     </Tabs>
+      
+    </View>    
+   
   )
 }
 
