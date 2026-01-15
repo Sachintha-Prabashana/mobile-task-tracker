@@ -86,7 +86,7 @@ export const updateTask = async (
     id: string,
     title: string,
     description: string,
-    isComplete: boolean
+    isComplete?: boolean
 ) => {
     const user = auth.currentUser;
     if (!user) throw new Error('User not authenticated');
